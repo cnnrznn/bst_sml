@@ -15,9 +15,11 @@ fun tree_print(u: tree):unit =
     case u of
         null => ()
         | node(l, k, r) =>
-            #1(tree_print(l),
-            print(Int.toString(k) ^ ", "),
-            tree_print(r))
+            (
+              tree_print(l);
+              print(Int.toString(k) ^ ", ");
+              tree_print(r)
+            )
 
 fun tree_from_file(r:tree, f:string):tree =
   let
